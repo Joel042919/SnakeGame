@@ -56,10 +56,11 @@ const drawSquare = (square, type) =>{
 
 const moveSnake = ()=>{
     const newSquare = String(Number(snake[snake.length - 1]) + directions[direction]).padStart(2,'0');
-
+    //console.log(newSquare)
     const [row, column] = newSquare.split('');
 
     if(newSquare<0 || newSquare > boardSize * boardSize || (direction === 'ArrowRight' && column==0) || (direction === 'ArrowLeft' && column==9 || boardSquares[row][column] === squareTypes.snakeSquare) ){
+
         gameOver()
     }else{
         snake.push(newSquare);
